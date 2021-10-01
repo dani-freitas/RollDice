@@ -18,11 +18,20 @@
         android:text="Hello World!" />
 
     <Button
-        android:id="@+id/roll_butron"
+        android:id="@+id/roll_butoon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal"
         android:text="@string/roll_label"
+        android:textColor="#FFFFFF"
+        tools:ignore="TextContrastCheck" />
+
+    <Button
+        android:id="@+id/contagem"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:text="@string/contagem"
         android:textColor="#FFFFFF"
         tools:ignore="TextContrastCheck" />
 

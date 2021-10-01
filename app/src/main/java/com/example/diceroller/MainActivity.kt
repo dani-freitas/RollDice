@@ -11,19 +11,41 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rollButton: Button = findViewById(R.id.roll_butron)
+        val rollButton: Button = findViewById(R.id.roll_butoon)
         rollButton.setOnClickListener { rollDice()}
+
+        val contagem: Button = findViewById(R.id.contagem)
+        contagem.setOnClickListener { countUp() }
+
+
     }
 
     private fun rollDice(){
 
-        Toast.makeText(this, "button clicked",
-            Toast.LENGTH_SHORT).show ()
-
         val resultText: TextView = findViewById(R.id.result_text)
-        resultText.text = "Dice Rolled!!"
+        resultText.text = ""
 
         val randomInt = (1..6).random()
         resultText.text = randomInt.toString()
+
     }
+
+
+    private fun countUp(){
+
+        val resultText: TextView = findViewById(R.id.result_text)
+
+        if (resultText.text == "Hello Word"){
+            resultText.text = "1"
+        }else{
+            var resultInt = resultText.text.toString(). toInt()
+            if (resultInt < 6 ){
+                resultInt ++
+                resultText.text = resultInt.toString()
+            }
+        }
+    }
+
 }
+
+
