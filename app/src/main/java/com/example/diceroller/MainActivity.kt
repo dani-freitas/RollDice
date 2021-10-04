@@ -3,47 +3,46 @@ package com.example.diceroller
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 
 class MainActivity : AppCompatActivity() {
+
+    lateinit var diceImagem : ImageView
+    lateinit var diceImagem2: ImageView
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val rollButton: Button = findViewById(R.id.roll_butoon)
+        val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.setOnClickListener { rollDice()}
+        diceImagem = findViewById(R.id.dice_imagem)
+        diceImagem2 = findViewById(R.id.dice_imagem)
+    }
 
-        val contagem: Button = findViewById(R.id.contagem)
-        contagem.setOnClickListener { countUp() }
+    private fun rollDice() {
+
+        diceImagem.setImageResource(getRandomDiceImage())
+        diceImagem2.setImageResource(getRandomDiceImage())
 
 
     }
 
-    private fun rollDice(){
 
-        val resultText: TextView = findViewById(R.id.result_text)
-        resultText.text = ""
 
+    private fun getRandomDiceImage(): Int {
         val randomInt = (1..6).random()
-        resultText.text = randomInt.toString()
-
-    }
-
-
-    private fun countUp(){
-
-        val resultText: TextView = findViewById(R.id.result_text)
-
-        if (resultText.text == "Hello Word"){
-            resultText.text = "1"
-        }else{
-            var resultInt = resultText.text.toString(). toInt()
-            if (resultInt < 6 ){
-                resultInt ++
-                resultText.text = resultInt.toString()
+            return when(randomInt){
+                1 -> R.drawable.dice_1
+                2 -> R.drawable.dice_2
+                3 -> R.drawable.dice_3
+                4 -> R.drawable.dice_4
+                5 -> R.drawable.dice_5
+                6 -> R.drawable.dice_6
+                else -> R.drawable.empty_dice
             }
-        }
     }
 
 }

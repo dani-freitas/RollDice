@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">DiceRoller</string>
-    <string name="Roll">Roll</string>
     <string name="roll_label">Roll</string>
-    <string name="contagem">Contagem</string>
+    <string name="roll">Roll</string>
+
 
 </resources>
