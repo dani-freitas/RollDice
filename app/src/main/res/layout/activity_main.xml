@@ -18,13 +18,7 @@
         android:src="@drawable/dice_1"
         tools:src="@drawable/dice_1" />
 
-    <ImageView
-        android:id="@+id/dice_imagem2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center_horizontal"
-        android:src="@drawable/dice_2"
-        tools:src="@drawable/dice_1" />
+
 
 
     <Button

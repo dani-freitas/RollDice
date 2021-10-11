@@ -10,7 +10,7 @@ import android.widget.Toast
 class MainActivity : AppCompatActivity() {
 
     lateinit var diceImagem : ImageView
-    lateinit var diceImagem2: ImageView
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -19,13 +19,13 @@ class MainActivity : AppCompatActivity() {
         val rollButton: Button = findViewById(R.id.roll_button)
         rollButton.setOnClickListener { rollDice()}
         diceImagem = findViewById(R.id.dice_imagem)
-        diceImagem2 = findViewById(R.id.dice_imagem)
+
     }
 
     private fun rollDice() {
 
         diceImagem.setImageResource(getRandomDiceImage())
-        diceImagem2.setImageResource(getRandomDiceImage())
+
 
 
     }
